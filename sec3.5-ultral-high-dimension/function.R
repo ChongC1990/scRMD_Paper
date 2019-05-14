@@ -46,13 +46,12 @@ ImputationAndDimReduction <- function(Raw_fileName,Cluster_fileName,file,Locatio
   setwd(Location)
 
   ## load data
-  load(Raw_fileName)
-  load(Cluster_fileName)
-
-  ## Normalize data
+  mat = read.table(Raw_fileName,header=T)
   mat = as.matrix(mat)
   res.raw = GeneNorm(mat)
   res.raw = t(res.raw)
+  clust = read.table(Cluster_fileName,header=T,sep='\t')
+  
 
   ## Imputation
   # scRMD
@@ -124,7 +123,9 @@ ImputationAndDimReduction <- function(Raw_fileName,Cluster_fileName,file,Locatio
 plotFig <- function(file,Cluster_fileName,Location=getwd()){
   ## Color and legend
   setwd(Location)  
-  clust = clust[index,]
+  clust = read.table(Cluster_fileName,header=T)
+  flag = sum(unique(clust$Color) == 'red')
+  if(!flag) clust$Color = paste0('#',clust$Color)
   leg.col = c()
   leg.txt = sort(unique(as.character(clust$Cluster)))
   for(u in leg.txt){

@@ -6,21 +6,21 @@
 source('function.R')
 
 ### Karaiskos
-ImputationAndDimReduction(Raw_fileName='Karaiskos.Rdata',Cluster_fileName='Karaiskos_clust.Rdata',
+ImputationAndDimReduction(Raw_fileName='Karaiskos.txt',Cluster_fileName='Karaiskos_clust.txt',
 	file='Karaiskos',Kcluster=4,cores=20,seed.value=12345)
-plotFig(file='Karaiskos',Cluster_fileName='Karaiskos_clust.Rdata')
+plotFig(file='Karaiskos',Cluster_fileName='Karaiskos_clust.txt')
 
 ### PBMC
-ImputationAndDimReduction(Raw_fileName='PBMC.Rdata',Cluster_fileName='PBMC_clust.Rdata',
+ImputationAndDimReduction(Raw_fileName='PBMC.txt',Cluster_fileName='PBMC_clust.txt',
 	file='PBMC',Kcluster=1,cores=20,seed.value=12345)
-plotFig(file='PBMC',Cluster_fileName='PBMC_clust.Rdata')
+plotFig(file='PBMC',Cluster_fileName='PBMC_clust.txt')
 
 ### Hrvatin
-ImputationAndDimReduction(Raw_fileName='Hrvatin.Rdata',Cluster_fileName='Hrvatin_clust.Rdata',
+ImputationAndDimReduction(Raw_fileName='Hrvatin.txt',Cluster_fileName='Hrvatin_clust.txt',
 	file='Hrvatin',,Kcluster=1,cores=20,seed.value=16431)
-plotFig(file='Hrvatin',Cluster_fileName='Hrvatin_clust.Rdata')
+plotFig(file='Hrvatin',Cluster_fileName='Hrvatin_clust.txt')
 
 ### Alles
-ImputationAndDimReduction(Raw_fileName='Alles.Rdata',Cluster_fileName='Alles_clust.Rdata',
+ImputationAndDimReduction(Raw_fileName='Alles.txt',Cluster_fileName='Alles_clust.txt',
 	file='Alles',Kcluster=1,cores=20,seed.value=3454)
-plotFig2(file='Alles',Cluster_fileName='Alles_clust.Rdata')
+plotFig2(file='Alles',Cluster_fileName='Alles_clust.txt')
